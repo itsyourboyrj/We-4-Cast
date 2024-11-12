@@ -1,27 +1,35 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
+
 body {
     background: #222;
 }
 
 .card {
     width: 90%;
-    max-width: 495px;
+    max-width: 500px;
     background: linear-gradient(135deg, #00feba, #5b548a);
     color: #fff;
-    margin: 100px auto 0;
+    margin: 50px auto;
     border-radius: 20px;
-    padding: 40px 35px;
+    padding: 30px 20px;
     text-align: center;
-    
+}
+
+/* Responsive adjustments for .card on smaller screens */
+@media (max-width: 768px) {
+    .card {
+        width: 95%;
+        padding: 20px 15px;
+    }
 }
 
 .search {
-    width: 100;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,13 +40,12 @@ body {
     outline: 0;
     background: #ebfffc;
     color: #555;
-    padding: 10px 25px;
-    height: 60px;
+    padding: 10px 20px;
+    height: 50px;
     border-radius: 30px;
     flex: 1;
-    margin-right: 16px;
-    font-style: 18px;
-   
+    margin-right: 10px;
+    font-size: 16px;
 }
 
 .search button {
@@ -46,28 +53,37 @@ body {
     outline: 0;
     background: #ebfffc;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .search button img {
-    width: 10px;
+    width: 20px;
 }
 
+/* Weather icon size adjustments */
 .weather-icon {
-    width: 200px;
-    margin-top: 30px;   
+    width: 150px;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .weather-icon {
+        width: 200px;
+    }
 }
 
 .weather h1 {
-    font-style: 80px;
+    font-size: 3rem; /* Responsive font sizing */
     font-weight: 500;
 }
 
 .weather h2 {
-    font-style: 45px;
+    font-size: 2rem;
     font-weight: 400;
     margin-top: -10px;
 }
@@ -76,8 +92,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
-    margin-top: 50px;
+    padding: 0 10px;
+    margin-top: 30px;
 }
 
 .col {
@@ -87,13 +103,12 @@ body {
 }
 
 .col img {
-    width: 40px;
-    margin-right: 10px;
-
+    width: 30px;
+    margin-right: 8px;
 }
 
 .humidity, .wind {
-    font-style: 28px;
+    font-size: 1.2rem;
     margin-top: -6px;
 }
 
@@ -103,8 +118,28 @@ body {
 
 .error {
     text-align: left;
-    margin-left: 10px;
-    font-style: 14px;
     margin-top: 10px;
+    font-size: 0.9rem;
     display: none;
+}
+
+/* Additional responsive styles for small screens */
+@media (max-width: 600px) {
+    .weather-icon {
+        width: 120px;
+    }
+    
+    .weather h1 {
+        font-size: 2.5rem;
+    }
+    
+    .weather h2 {
+        font-size: 1.5rem;
+    }
+    
+    .details {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
 }
